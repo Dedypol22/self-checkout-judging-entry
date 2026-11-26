@@ -20,7 +20,7 @@ def main() -> None:
         saved = handle.read()
     if saved != LINE:
         raise SystemExit("entry.txt does not match LINE exactly")
-    if not 1 <= len(saved) <= 200:
+    if not 1 <= len(saved.encode("utf-8")) <= 200:
         raise SystemExit("entry.txt must be 1-200 characters")
     if not saved.strip():
         raise SystemExit("entry.txt must not be only whitespace")
